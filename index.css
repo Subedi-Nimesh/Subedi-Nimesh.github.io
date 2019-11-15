@@ -9,9 +9,17 @@ table{
     margin-left: auto;
     margin-right: auto;
     text-align: left;
-    border: 3;
+    border: black;
+    padding: 10px;
 }
 
 tr{
     font-size: 30px;
+    padding: 10px;
+}
+
+td{
+    font-size: 30px;
+    padding: 5px;
+    padding-right: 50px;
 }
