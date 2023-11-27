@@ -1,0 +1,29 @@
+/* Styles For the Footer */
+footer {
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    min-height: 10em;
+}
+
+.footerLogo {
+    cursor: pointer;
+    width: 8em;
+    height: auto;
+    border-radius: 50%;
+    float: right;
+}
+
+.socialButton {
+    float: right;
+    margin: 1rem;
+}
+
+.socialButton > i:nth-child(n) {
+    margin: 5px;
+}
+
+
+#copyRight {
+    text-align: right;
+    margin-right: 10px;
+}
