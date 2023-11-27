@@ -46,6 +46,6 @@ button {
 }
 
 button:hover {
-    background-color: rgba(0,136,169,0.8);
-    color: white;
+    background: linear-gradient(90deg, hsla(98, 100%, 88%, 1) 42%, hsla(182, 93%, 88%, 1) 100%);
+    color: black;
 }
