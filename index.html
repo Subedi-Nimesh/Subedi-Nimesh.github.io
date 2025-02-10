@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimesh Subedi | FullStack Developer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="import" href="navigation.html">
+    <link rel="icon" href="assets/LogoPNG.png" type="image/x-icon">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><button id="theme-toggle" class="btn btn-secondary">
+                Dark Mode
+              </button></li>
+        </ul>
+    </nav>
+
+    <section class="intro">
+        <div class="intro-content">
+            <h1>Hi, I'm Nimesh Subedi</h1>
+            <p>Full-stack Software Developer
+                <span class="brakets">{ }</span>
+            </p>
+            <div>I am a team player with knowledge of HTML, CSS and JavaScript and prior experience in the service
+                industry. Calm under pressure, quick learner with the goal of customer satisfaction.</div>
+            <div class="my-1">
+                <a href="contact.html" target="_blank" class="btn">Contact Me</a>
+                <a href="assets/New Resume.pdf" target="_blank" class="btn">See My Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="education">
+        <div class="education-content">
+            <h1>Education</h1>
+            <br>
+            <div id="BYUI" class="education-card" style="opacity: 0;" onclick="schoolLink('byui')">
+                <img src="assets/BYU-Idaho.png" class="eduLogo" />
+                <div class="education-text-school">
+                    Brigham Young University - Idaho
+                </div>
+                <div class="education-text-description">
+                    Bachelor of Science in Software Engineering
+                </div>
+                <div class="education-text-description">
+                    January 2018 - December 2020
+                </div>
+            </div>
+            <div class="react-reveal education-card-border"
+                style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-2025;">
+            </div>
+            <div id="WILMU" class="education-card" style="opacity: 0;" onclick="schoolLink('wilmu')">
+                <img src="assets/Wilmu.png" class="eduLogo" />
+                <div class="education-text-school">
+                    Wilmington University
+                </div>
+                <div class="education-text-description">
+                    Master of Science in Information Systems Technology
+                </div>
+                <div class="education-text-description">
+                    August 2023 - December 2024
+                </div>
+            </div>
+            <div class="react-reveal education-card-border"
+                style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-2025;">
+            </div>
+        </div>
+    </section>
+
+    <section class="experience">
+        <h1>Experiences</h1>
+        <div class="experience-content">
+            <div class="experience-card card">
+                <div class="experience-banner" style="background: rgb(60, 60, 180);">
+                    <div class="experience-blurred_div"></div>
+                    <div class="experience-div-company">
+                        <h5 class="experience-text-company">UDN Consultants LLC</h5>
+                    </div>
+                    <img class="experience-img" src="assets/UDN.png" alt="ThriveLife">
+                </div>
+                <div class="experience-text-details">
+                    <h5 class="experience-text-role">SOFTWARE ENGINEER INTERN</h5>
+                    <h5 class="experience-text-date">May 2024 – Aug 2024</h5>
+                    <p class="subTitle experience-text-desc"></p>
+                    <ul>
+                        <li class="subTitle">Created interactive prototypes in Figma to visualize and test design
+                            concepts, reducing development rework by 20% and
+                            ensuring alignment with user needs.
+                        </li>
+                        <li class="subTitle">Developed comprehensive documentation in Confluence, improving team efficiency and providing a reliable resource for
+                            developers, stakeholders, and future team members.
+                        </li>
+                        <li class="subTitle">Designed and implemented RESTful APIs to integrate third-party services, enabling seamless data flow between frontend and
+                            backend systems and ensuring API reliability and scalability.
+                        </li>
+                        <li class="subTitle">Conducted rigorous code reviews, identifying and resolving critical bugs, which reduced post-release issues by 15% and
+                            improved overall code maintainability.
+                        </li>
+                        <li class="subTitle">Refined SQL queries and optimized database structures, improving query execution time by 10% and enhancing overall system
+                            performance.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="experience-card card">
+                <div class="experience-banner" style="background: rgb(203, 148, 76);">
+                    <div class="experience-blurred_div"></div>
+                    <div class="experience-div-company">
+                        <h5 class="experience-text-company">ThriveLife</h5>
+                    </div>
+                    <img class="experience-img" src="assets/ThriveLife.png" alt="ThriveLife">
+                </div>
+                <div class="experience-text-details">
+                    <h5 class="experience-text-role">WEB DEVELOPER</h5>
+                    <h5 class="experience-text-date">Nov 2021 – May 2023</h5>
+                    <p class="subTitle experience-text-desc"></p>
+                    <ul>
+                        <li class="subTitle">Designed and built interactive, mobile responsive reports using Vuetify and
+                            PHP, enabling clients to track progress seamlessly
+                            across devices and improve user satisfaction by 25% which reduced client support requests by
+                            15%.
+                        </li>
+                        <li class="subTitle">Built high-traffic websites and custom modules on Magento and Laravel,
+                            enhancing user experience and directly contributing to
+                            a 20% increase in sales revenue.
+                        </li>
+                        <li class="subTitle">Integrated token-based authentication with REST APIs, improving data
+                            accessibility and security across multiple projects and
+                            reducing unauthorized access incidents
+                        </li>
+                        <li class="subTitle">Leveraged Google Analytics, Meta, and TikTok Pixel to track and optimize
+                            client promotion campaigns, resulting in a 20%
+                            increase in sales growth over six months.
+                        </li>
+                        <li class="subTitle">Handled extension installations and maintenance using Composer, enabling
+                            the seamless addition of new features and existing
+                            functionality.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="experience-card card">
+                <div class="experience-banner" style="background: rgb(5, 50, 106);">
+                    <div class="experience-blurred_div"></div>
+                    <div class="experience-div-company">
+                        <h5 class="experience-text-company">FamilySearch</h5>
+                    </div>
+                    <img class="experience-img" src="assets/FamilySearch.png" alt="ThriveLife">
+                </div>
+                <div class="experience-text-details">
+                    <h5 class="experience-text-role">FRONT-END WEB DEVELOPER INTERN</h5>
+                    <h5 class="experience-text-date">JAN 2020 – JUL 2020</h5>
+                    <p class="subTitle experience-text-desc"></p>
+                    <ul>
+                        <li class="subTitle">Developed and integrated feature flags to enable controlled testing and experimentation, reducing deployment risks by 25%
+                            and accelerating the release cycle by 15%.                            
+                        </li>
+                        <li class="subTitle">Collaborated on feature development using ReactJS and AngularJS, successfully migrating legacy AngularJS projects to ReactJS,
+                            improving code maintainability and reducing technical debt by 30%.
+                        </li>
+                        <li class="subTitle">Created interactive prototypes in Figma for potential projects, one of which led to the development of an AI/Machine Learning
+                            tool for reading scanned documents.
+                        </li>
+                        <li class="subTitle">Developed unit tests for JavaScript web components, resulting in 80% code coverage and reducing bugs by 35%.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Nimesh Subedi. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
