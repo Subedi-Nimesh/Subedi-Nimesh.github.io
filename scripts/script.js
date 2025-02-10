@@ -1,26 +1,46 @@
- // Wrap all the initialization in a single DOMContentLoaded event listener
- document.addEventListener("DOMContentLoaded", function() {
+// Wrap all the initialization in a single DOMContentLoaded event listener
+document.addEventListener("DOMContentLoaded", function () {
   setupBraketsAnimation();
-  // ScrollTrigger.refresh();
+  loadNavigation();
+  loadTheme();
 });
 
 /////////////////////////
-//Animation for brackets
+//Loading Navigation in all pages
 /////////////////////////
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-
-// Check localStorage for theme preference
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark-mode');
+function loadNavigation() {
+  fetch('navigation.html', {
+    method: 'GET',
+    credentials: 'include'
+  })
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    });
 }
 
-// Toggle Dark Mode
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-  const isDarkMode = body.classList.contains('dark-mode');
-  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-});
+
+/////////////////////////
+//Toggle for dark theme
+/////////////////////////
+function loadTheme() {
+  // const themeToggle = document.getElementById('theme-toggle');
+  // const body = document.body;
+
+  // // Check localStorage for theme preference
+  // if (localStorage.getItem('theme') === 'dark') {
+  //   body.classList.add('dark-mode');
+  //   themeToggle.checked = true;
+  // }
+
+  // // Toggle Dark Mode
+  // themeToggle.addEventListener('click', () => {
+  //   body.classList.toggle('dark-mode');
+  //   const isDarkMode = body.classList.contains('dark-mode');
+  //   localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  // });
+}
+
 
 /////////////////////////
 //Animation for brackets
@@ -68,7 +88,7 @@ function setupBraketsAnimation() {
 /////////////////////////
 //Trigger Animation
 /////////////////////////
-window.onscroll = function() {
+window.onscroll = function () {
   myFunction()
 };
 
@@ -85,7 +105,7 @@ function myFunction() {
 //School Link
 /////////////////////////
 function schoolLink(link) {
-  window.location = "http://www." + link + ".edu/"; 
+  window.location = "http://www." + link + ".edu/";
 }
 
 
