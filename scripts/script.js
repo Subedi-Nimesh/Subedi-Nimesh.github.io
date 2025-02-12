@@ -1,7 +1,7 @@
 // Wrap all the initialization in a single DOMContentLoaded event listener
 document.addEventListener("DOMContentLoaded", function () {
   setupBraketsAnimation();
-  loadNavigation();
+  // loadNavigation();
   loadTheme();
 });
 
@@ -9,14 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
 //Loading Navigation in all pages
 /////////////////////////
 function loadNavigation() {
-  fetch('navigation.html', {
-    method: 'GET',
-    credentials: 'include'
-  })
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header').innerHTML = data;
-    });
+  // fetch('navigation.html', {
+  //   method: 'GET',
+  //   credentials: 'include'
+  // })
+  //   .then(response => response.text())
+  //   .then(data => {
+  //     document.getElementById('header').innerHTML = data;
+  //   });
+
 }
 
 
@@ -24,21 +25,21 @@ function loadNavigation() {
 //Toggle for dark theme
 /////////////////////////
 function loadTheme() {
-  // const themeToggle = document.getElementById('theme-toggle');
-  // const body = document.body;
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
 
-  // // Check localStorage for theme preference
-  // if (localStorage.getItem('theme') === 'dark') {
-  //   body.classList.add('dark-mode');
-  //   themeToggle.checked = true;
-  // }
+  // Check localStorage for theme preference
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    themeToggle.checked = true;
+  }
 
-  // // Toggle Dark Mode
-  // themeToggle.addEventListener('click', () => {
-  //   body.classList.toggle('dark-mode');
-  //   const isDarkMode = body.classList.contains('dark-mode');
-  //   localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  // });
+  // Toggle Dark Mode
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  });
 }
 
 
@@ -88,18 +89,18 @@ function setupBraketsAnimation() {
 /////////////////////////
 //Trigger Animation
 /////////////////////////
-window.onscroll = function () {
-  myFunction()
-};
+// window.onscroll = function () {
+//   myFunction()
+// };
 
-function myFunction() {
-  if (document.documentElement.scrollTop > 280) {
-    document.getElementById("BYUI").classList.add("animation");
-  }
-  if (document.documentElement.scrollTop > 420) {
-    document.getElementById("WILMU").classList.add("animation");
-  }
-}
+// function myFunction() {
+//   if (document.documentElement.scrollTop > 280) {
+//     document.getElementById("BYUI").classList.add("animation");
+//   }
+//   if (document.documentElement.scrollTop > 420) {
+//     document.getElementById("WILMU").classList.add("animation");
+//   }
+// }
 
 /////////////////////////
 //School Link
@@ -110,9 +111,52 @@ function schoolLink(link) {
 
 
 /////////////////////////
-//Add activities here
+//Go To Top Button
 /////////////////////////
-// document.getElementById('contact-form').addEventListener('submit', function (e) {
-//   e.preventDefault();
-//   alert('Thank you for your message!');
-// });
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    document.getElementById("topBtn").style.display = "block";
+  } else {
+    document.getElementById("topBtn").style.display = "none";
+  }
+
+  if (document.documentElement.scrollTop > 280) {
+    document.getElementById("BYUI").classList.add("animation");
+  }
+
+  if (document.documentElement.scrollTop > 420) {
+    document.getElementById("WILMU").classList.add("animation");
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function goToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+/////////////////////////
+//Displaying the modal
+/////////////////////////
+function displayModal(card) {
+  if (window.innerWidth > 768) {
+    card.classList.add('modal');
+    document.body.style.overflow = "hidden";
+    card.firstElementChild.classList.add('animate');  
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == card) {
+      card.classList.remove('modal');
+      card.firstElementChild.classList.add('animate');
+      document.body.style.overflow = "";
+    }
+
+  }
+}
